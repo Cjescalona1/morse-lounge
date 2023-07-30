@@ -292,7 +292,7 @@ svg {
   
   nav {
     display: flex;
-    left: 0;
+    left: -20em;
     justify-content: center;
     position: absolute;
     top: 0em;
@@ -338,10 +338,10 @@ svg {
     top: 2vh;
   }
   .centered-logo {
-    width: 50vw;
+    width: 30vw;
     position: relative;
     top: 3em;
-    left: -30em;
+    left: 0em;
 }
   
   .top-left-logo {
@@ -355,13 +355,7 @@ svg {
     margin: 4vh 0;
   }
 
-  nav {
-    display: flex;
-    left: 0;
-    justify-content: center;
-    position: absolute;
-    top: 0em;
-  }
+  
 
   nav ul {
     justify-items: center;
@@ -476,12 +470,7 @@ svg {
     position: relative;
     top: 10em;  
   }
-  .top-left-logo {
-    position: relative;
-    width: 60vw;
-    top: 0;
-    right: 12vw;
-  }
+  
 
   #new-game {
     margin: 4vh 0;
@@ -609,13 +598,14 @@ svg {
     top: 2vh;
   }
   .centered-logo {
-    width: 80vw;
+    width: 30vw;
     position: relative;
-    top: 10em;
+    top: 0em;
+    right: 25em;
   }
   .top-left-logo {
     position: relative;
-    width: 60vw;
+    width: 30vw;
     top: 0;
     right: 12vw;
   }
@@ -626,7 +616,7 @@ svg {
 
   nav {
     display: flex;
-    left: 0;
+    left: -30em;
     justify-content: center;
     position: absolute;
     top: 0em;
@@ -744,13 +734,14 @@ svg {
     top: 2vh;
   }
   .centered-logo {
-    width: 80vw;
+    width: 30vw;
     position: relative;
-    top: 10em;  
+    top: 0em;
+    right: 25em;
   }
   .top-left-logo {
     position: relative;
-    width: 60vw;
+    width: 30vw;
     top: 0;
     right: 12vw;
   }
@@ -761,10 +752,10 @@ svg {
 
   nav {
     display: flex;
-    left: 0;
+    left: -30em;
     justify-content: center;
     position: absolute;
-    top: 0em;
+    top: 0em;    
   }
 
   nav ul {
@@ -884,10 +875,10 @@ svg {
     top: 2vh;
   }
   .centered-logo {
-    width: 80vw;
-    width: 80vw;
+    width: 50vw;
     position: relative;
     top: 6em;
+    left: 3vw;
   }
   .top-left-logo {
     position: relative;
@@ -1006,13 +997,15 @@ svg {
   #start{
     position: relative;
     top:-7vh;
+    left: 0.5em;
   }
   #start>a{
   text-decoration: none;
   }
   header{
     position: relative;
-    top: -35vh;
+    top: -32vh;
+    left: 6vw;
   }
   .header2{
     position: fixed;
