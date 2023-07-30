@@ -8,6 +8,7 @@ document.querySelector("#new-game").addEventListener("click", newGame);
 
 /* Morse code logic*/
 let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+unlockAudioContext(audioCtx);
 let masterVolume = audioCtx.createGain();
 masterVolume.gain.setValueAtTime(0.05, audioCtx.currentTime);
 masterVolume.connect(audioCtx.destination);
@@ -116,6 +117,14 @@ let morseCode = {
   home_.classList.add("slide-left");
   board_.classList.remove("hide");
 
+  }
+  function unlockAudioContext(audioCtx) {
+    if (audioCtx.state !== 'suspended') return;
+    const b = document.body;
+    const events = ['touchstart','touchend', 'mousedown','keydown'];
+    events.forEach(e => b.addEventListener(e, unlock, false));
+    function unlock() { audioCtx.resume().then(clean); }
+    function clean() { events.forEach(e => b.removeEventListener(e, unlock)); }
   }
 //
 
