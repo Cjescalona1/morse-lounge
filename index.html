@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MORSE CODE</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+</head>
+
+<body>
+    <video autoplay muted loop id="bg-vid">
+        <source src="./res/bg-vid-min.mp4" type="video/mp4"/>  
+    </video>
+    <div class="main">
+        <div id="home">
+            <header>
+                <img src="image-removebg-preview.png" alt="" class="centered-logo">
+            </header>
+            <h2 id="start"><a>Start New Game</a></h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100092477215801" target="_blank">
+                            <img class="social-icons" src="./res/facebook_2168281.png" alt="Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/morsecode.lounge/" target="_blank">
+                            <img class="social-icons" src="./res/instagram_1384015.png" alt="Instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@morsecode.lounge" target="_blank">
+                            <img class="social-icons" src="./res/tiktok_3116491.png" alt="TikTok">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="board" class="hide">
+            <header class="header2">
+                <img src="image-removebg-preview.png" alt="" class="top-left-logo">
+            </header>
+            <div class="container">
+                <span id="masthead">Decipher this week's code</span>
+            <ul id="hint"></ul> <br> 
+            <div id="guessing"></div>
+            <div id="hint-message">
+                <p>TAP EMPTY FIELD FOR A HINT</p>
+            </div>
+            <div id="keypad">
+                <div id=keypad--row1></div>
+                <div id=keypad--row2></div>
+                <div id=keypad--row3></div>
+                <div id=keypad--row4></div>
+            </div>
+            <h2 id="new-game"><a>New Game</a></h2>
+            <div id="tally help-message">
+                <h2>Click these letters to see how they sound</h2>
+            </div>
+            <div id="tally">
+                <div class="letter">1</div>
+                <div class="letter">2</div>
+                <div class="letter">3</div>
+                <div class="letter">4</div>
+                <div class="letter">5</div>
+                <div class="letter">6</div>
+                <div class="letter">7</div>
+                <div class="letter">8</div>
+                <div class="letter">9</div>
+                <div class="letter">0</div>
+            </div>
+                <div id="tally">
+                    <div class="letter">Q</div>
+                    <div class="letter">W</div>
+                    <div class="letter">E</div>
+                    <div class="letter">R</div>
+                    <div class="letter">T</div>
+                    <div class="letter">Y</div>
+                    <div class="letter">U</div>
+                    <div class="letter">I</div>
+                    <div class="letter">O</div>
+                    <div class="letter">P</div>
+                </div>
+                <div id="tally">
+                    <div class="letter">A</div>
+                    <div class="letter">S</div>
+                    <div class="letter">D</div>
+                    <div class="letter">F</div>
+                    <div class="letter">G</div>
+                    <div class="letter">H</div>
+                    <div class="letter">J</div>
+                    <div class="letter">K</div>
+                    <div class="letter">L</div>
+                </div>
+                <div id="tally">
+                    <div class="letter">Z</div>
+                    <div class="letter">X</div>
+                    <div class="letter">C</div>
+                    <div class="letter">V</div>
+                    <div class="letter">B</div>
+                    <div class="letter">N</div>
+                    <div class="letter">M</div>
+                </div>           
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+<!-- <script src="script2.js"></script> -->
+
+</html>

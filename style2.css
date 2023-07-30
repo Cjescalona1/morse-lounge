@@ -1,0 +1,1199 @@
+html {
+  text-align: center;
+  /*set this with the body inline-block to center the body*/
+  background-color: white;
+  font-size: 1vh;
+  /*set root font size, and then use rem throughout the file*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 100%) {
+
+  /*portrait screen*/
+  html {
+    font-size: 1.5vw;
+  }
+}
+body {
+  background-image: url("./res/bg-vid.mp4");
+  background-size: 100% 100%;
+  color: #cacaca;
+  font-family: 'Montserrat', "Arial";
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#keypad--row1>a,
+#keypad--row2>a,
+#keypad--row3>a,
+#keypad--row4>a{
+  font-size: x-large;
+  font-weight: bolder;
+}
+.letter{cursor:pointer}
+
+@media (max-width: 100vh) {
+
+  /*portrait screen*/
+  body {
+    width: 100vw;
+  }
+}
+
+@import "compass/css3";
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stroke-dotted {
+  opacity: 0;
+  stroke-dasharray: 4, 5;
+  stroke-width: 1px;
+  transform-origin: 50% 50%;
+  animation: spin 4s infinite linear;
+  transition: opacity 1s ease, stroke-width 1s ease;
+}
+
+.stroke-solid {
+  stroke-dashoffset: 0;
+  stroke-dashArray: 300;
+  stroke-width: 4px;
+  transition: stroke-dashoffset 1s ease, opacity 1s ease;
+}
+
+.icon {
+  transform-origin: 50% 50%;
+  transition: transform 200ms ease-out;
+}
+
+#play:hover .stroke-dotted {
+  stroke-width: 4px;
+  opacity: 1;
+}
+
+#play:hover .stroke-solid {
+  opacity: 0;
+  stroke-dashoffset: 300;
+}
+
+#play:hover .icon {
+  transform: scale(1.05);
+}
+
+#play {
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+
+
+@media (max-width: 40vh) {
+  /*portrait screen*/
+
+}
+
+#tally2 {
+  width: 100%;
+
+  background-color: #000000;
+  display: flex;
+
+
+  padding: rem;
+}
+
+#tally {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex; 
+  justify-content: center;
+}
+
+#tally .letter {
+  color: #dddddd;
+  font-size: 3rem;
+  margin: 0.2em 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  text-shadow: 5px 5px 8px rgba(143, 143, 143, 0.15);
+}
+
+@media screen and (min-width: 768px) {
+  #tally .letter {
+    font-size: 2rem;
+    margin: 0.2em 1em;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+#play-pause-btn {
+  cursor: pointer;
+}
+
+.sugar {
+  font-size: 4.5rem;
+
+  cursor: pointer;
+  font-weight: 100;
+  margin: 1.7rem;
+}
+
+h1 {
+  font-size: 8.4rem;
+  font-weight: 100;
+  margin: 2.5rem 0;
+}
+
+h2 {
+  font-size: 4.5rem;
+  cursor: pointer;
+  font-weight: 100;
+  margin: 1.7rem;
+}
+
+#keypad{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#keypad a {
+  font-size: 6.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+}
+
+#keypad a.finished {
+  /*reset pointer after the game is over to prevent further clicking*/
+  cursor: default;
+}
+
+#guessing {
+  margin: 2rem auto;
+  width: 80vw;
+  font-size: 40px;
+}
+
+
+.hidden {
+  /*visibility: hidden;*/
+  display: none;
+}
+
+[status="escaped"] {
+  /*a status of the masthead*/
+  color: #FFFFFF;
+}
+
+[status="hanged"] {
+  /*a status of the masthead*/
+  color: #f57b7b;
+}
+
+
+
+span {
+  font-size: 3.3rem;
+}
+
+#wins,
+#losses {
+  margin-right: 4rem
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  /*when buttons are being pressed down*/
+  position: relative;
+  top: 2px;
+}
+
+svg {
+  stroke: #cacaca;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+}
+
+
+#custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+}
+
+#play-pause-btn {
+  cursor: pointer;
+}
+
+#volume-control,
+#progress-bar {
+  width: 80%;
+  margin: 0 10px;
+}
+.incorrect-letter{
+  color: red !important;
+  font-weight: bolder;
+}
+.correct-letter{
+  color: greenyellow !important;
+  font-weight: bolder;
+}
+.finished{
+  color: gray;
+}
+/**
+ * ------------------------------------------
+ *  Responsive Grid Media Queries - 1280, 1024, 768, 480
+ *   1280-1024   - desktop (default grid)
+ *   1024-768    - tablet landscape
+ *   768-480     - tablet 
+ *   480-less    - phone landscape & smaller
+ * --------------------------------------------
+ */
+
+@media all and (min-width:1280px){
+  
+  nav {
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    top: 0em;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -14vh;
+    flex-direction: column;
+    left: -30em;
+  }
+
+  nav ul li{ 
+    height: 0.6em;
+  }
+  li {
+    font-size: 10vw;
+    list-style: none;
+  }  
+
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 50vw;
+    position: relative;
+    top: 3em;
+    left: -30em;
+}
+  
+  .top-left-logo {
+    position: relative;
+    width: 20vw;
+    top: 1em;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    top: 0em;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -12vh;
+    flex-direction: column;
+  }
+
+  nav ul li{ 
+    height: 0.6em;
+  }
+
+  .social-icons {
+    height: 0.5em;
+    width: 0.5em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{  
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{ 
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{ 
+    font-size: 0.7em;
+    top: 1em;
+    position: relative;
+    color:transparent
+  }
+  
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #masthead{
+    position: relative;
+    top: 2em;
+  }
+  #tally{
+    width: 99.5vw;
+  }
+  #tally > div{
+    font-size: 4em;
+  
+    }
+    #hint-message>p{
+      font-size: 2em;
+      position: relative;
+      top: 0.5em;
+    }
+  }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  
+
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 80vw;
+    position: relative;
+    top: 10em;  
+  }
+  .top-left-logo {
+    position: relative;
+    width: 60vw;
+    top: 0;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -20vh;
+  }
+
+  li {
+    font-size: 10vw;
+    margin: 0 1vw;
+    list-style: none;
+  }
+
+  .social-icons {
+    height: 1em;
+    width: 1em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{
+    /* display: flex;
+    position: relative;
+    top: 6em;
+    left:5em;
+    text-align: center; */
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{
+  /* width: 1em;  
+  margin: 0;  */
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{ 
+    font-size: 0.7em;
+    top: 1em;
+    position: relative;
+    color:transparent
+  }
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #masthead{
+    position: relative;
+    top: 2em;
+  }
+  #tally{
+    width: 100vw;
+  }
+  #tally > div{
+    font-size: 4em;
+  
+    }
+    #hint-message>p{
+      font-size: 2em;
+      position: relative;
+      top: 0.5em;
+    }
+}
+ 
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  
+  
+
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 80vw;
+    position: relative;
+    top: 10em;
+  }
+  .top-left-logo {
+    position: relative;
+    width: 60vw;
+    top: 0;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    top: 0em;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -25vh;
+    flex-direction: column;
+  }
+
+  nav ul li{ 
+    height: 0.6em;
+  }
+  li {
+    font-size: 10vw;
+    list-style: none;
+  }
+
+  .social-icons {
+    height: 0.5em;
+    width: 0.5em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{  
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{ 
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{ 
+    font-size: 0.7em;
+    top: 1em;
+    position: relative;
+    color:transparent
+  }
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #masthead{
+    position: relative;
+    top: 2em;
+  }
+  #tally{
+    width: 100vw;
+  }
+  #tally > div{
+    font-size: 4em;
+  
+    }
+    #hint-message>p{
+      font-size: 2em;
+      position: relative;
+      top: 0.5em;
+    }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+
+  
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 80vw;
+    position: relative;
+    top: 10em;  
+  }
+  .top-left-logo {
+    position: relative;
+    width: 60vw;
+    top: 0;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    top: 0em;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -25vh;
+    flex-direction: column;
+  }
+
+  nav ul li{ 
+    height: 0.6em;
+  }
+  li {
+    font-size: 10vw;
+    list-style: none;
+  }
+  .social-icons {
+    height: 0.5em;
+    width: 0.5em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{
+    /* display: flex;
+    position: relative;
+    top: 6em;
+    left:5em;
+    text-align: center; */
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{
+  /* width: 1em;  
+  margin: 0;  */
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{ 
+    font-size: 0.7em;
+    top: 1em;
+    position: relative;
+    color:transparent
+  }
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #masthead{
+    position: relative;
+    top: 2em;
+  }
+  #tally{
+    width: 100vw;
+  }
+  #tally > div{
+    font-size: 4em;
+  
+    }
+    #hint-message>p{
+      font-size: 2em;
+      position: relative;
+      top: 0.5em;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 80vw;
+    width: 80vw;
+    position: relative;
+    top: 6em;
+  }
+  .top-left-logo {
+    position: relative;
+    width: 60vw;
+    top: 0;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -25vh;
+  }
+
+  li {
+    font-size: 10vw;
+    margin: 0 1vw;
+    list-style: none;
+  }
+
+  .social-icons {
+    height: 1em;
+    width: 1em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+    font-weight: bolder;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{
+    /* display: flex;
+    position: relative;
+    top: 6em;
+    left:5em;
+    text-align: center; */
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{
+  /* width: 1em;  
+  margin: 0;  */
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{ 
+    font-size: 0.7em;
+    top: 1em;
+    position: relative;
+    color:transparent
+  }
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #masthead{
+    position: relative;
+    top: 2em;
+  }
+  #tally{
+    width: 100vw;
+  }
+  #tally > div{
+    font-size: 4em;
+    }
+    #hint-message>p{
+      font-size: 2em;
+      position: relative;
+      top: 0.5em;
+    }
+}
+
+@media all and (max-width: 480px) {
+
+  #home {
+    position: relative;
+    left: -5vw;
+    top: 2vw;  
+  }
+  #start{
+    position: relative;
+    top:-7vh;
+  }
+  #start>a{
+  text-decoration: none;
+  }
+  header{
+    position: relative;
+    top: -35vh;
+  }
+  .header2{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+  }
+  .centered-logo {
+    width: 80vw;
+  }
+  .top-left-logo {
+    position: relative;
+    width: 60vw;
+    top: 0;
+    right: 12vw;
+  }
+
+  #new-game {
+    margin: 4vh 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-items: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    bottom: -30vh;
+  }
+
+  li {
+    font-size: 10vw;
+    margin: 0 1vw;
+    list-style: none;
+  }
+
+  .social-icons {
+    height: 1em;
+    width: 1em;
+    filter: invert(1);
+  }
+
+  .hide {
+  display:none
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #keypad--row1>a,
+  #keypad--row2>a,
+  #keypad--row3>a,
+  #keypad--row4>a{
+    font-size: x-large;
+  }
+  .container{
+    position: relative;
+    top: -10em;
+  }
+  #hint{
+    /* display: flex;
+    position: relative;
+    top: 6em;
+    left:5em;
+    text-align: center; */
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8.5em;
+    left: -2.5em;
+  }
+  #hint>li{ 
+  font-size: 35px;
+  margin: 0.25em;
+
+  }
+  #hint>li>a{  
+    font-size: 0.75em;
+    position: relative;
+    top: 1em;
+    color: transparent;
+  }
+  #bg-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #hint-message>p{
+    font-size: 3vw;
+  }
+
+}
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+  /* Portrait styles here */
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+  /* Landscape styles here */
+}
+
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {}
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation:landscape) {}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {}
+
+
+/* animations */
+
+.slide-left {
+  -webkit-animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2023-7-28 21:1:8
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+  }
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
